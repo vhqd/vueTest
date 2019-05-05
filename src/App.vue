@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <transition :name="transitionName">
-      <keep-alive :include="keepAlive">
+      <!-- <keep-alive :include="keepAlive"> -->
+      <keep-alive>
         <router-view class="Router" :style="{transition: 'all '+transitionTime+'s ease'}"></router-view>
       </keep-alive>
     </transition>
@@ -22,7 +23,7 @@ export default {
     return {
       active: 0,
       transitionTime:0.377,//Tabbar切换页面时不使用动画
-      keepAlive: "home", //需要缓存的页面 例如首页
+      /* keepAlive: "home", //需要缓存的页面 例如首页 */
       transitionName: "slide-right" //初始过渡动画方向
     };
   },
